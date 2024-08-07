@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+/* Variables */
+:root {
+    /* Colors */
+    --BGCOLOR: #5ce1e6;
+    --BGCOLOR-FADE: #b0e9ff;
+    --BGIMAGE: linear-gradient(to bottom, #5ce1e6, #b0e9ff);
+    --HEADER-COLOR: black;
+    --FONTCOLOR: #303030;
+
+    /* Fonts */
+    --HF: 'Cardo', sans-serif;
+    --TF: 'Montserrat', monospace;
+    --HFS: clamp(20px, calc(1vw + 80px), 90px);
+    --TFS: clamp(10px, calc(1vw + 12px), 25px);
+
+    /* Borders */
+    --HEADER-BORDER: 6px solid var(--FONTCOLOR);
+    --BORDER-IMAGE: 10px double var(--FONTCOLOR);
+    --BORDER-TOP: 5px double black;
+    --PADDING-HEADER: clamp(15px, calc(1vw + 16px), 1.5rem)
+}
+
+/*General styles*/
+html {
+    scroll-behavior: smooth;
+    font-size: var(--TFS);
+    font-family: var(--TF);
+    background-color: var(--BGCOLOR);
+    background-image: var(--BGIMAGE);
+}
+
+body {
+    background-image: var(--BGIMAGE);
+    /* display: flex; */
+    /* flex-wrap: nowrap;
+    flex-grow: 1; */
+    min-height: 100vh;
+    max-width: unset;
+   /*  justify-content: center;
+    text-align: center; */
+    width: 100%;
+}
+
+
+
+/*Header*/
+.header__h1 {
+    font-size: var(--HFS);
+    font-family: var(--HF);
+    color: var(--FONTCOLOR);
+    padding-bottom: 2rem;
+}
+
+.header__p {
+    border: var(--HEADER-BORDER);
+    padding: var(--PADDING-HEADER);
+    text-align: center;
+    border-radius: 3rem;
+    font-family: var(--TF);
+    font-size: var(--TFS);
+    color: var(--FONTCOLOR);
+    font-weight: 500;
+    }
+
+    .header__img {
+        border-top-left-radius: 15rem;
+        border-top-right-radius: 15rem;
+        border: var(--BORDER-IMAGE);
+        text-align: center;
+    }
+    
+    .star {
+        margin-left: clamp(100px, calc(1vw - 100rem), 100rem);
+    }
+
+    @media (max-width: 576px) {
+        .header__img {
+           text-align: center;
+        }
+
+        body {
+            max-width: 100%;
+            justify-content: center;
+        }
+    }
+    
+
+    /*hero section*/
+
+    .aboutme {
+        /* background-image: linear-gradient(to left, #5ce1e6, #b0e9ff); */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-top: var(--BORDER-TOP);
+    }
+    
+    .hero__container {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        column-gap: 10px;
+        grid-template-rows: 1fr;
+        background-image: var(--BGIMAGE);
+        border-radius: 1rem;
+        margin: 2rem;
+        box-shadow: 1px 2px 2px;
+        width: 80%;
+        /* display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex: 1;
+        flex-wrap: nowrap; */
+    }
+    
+    .hero__img img {
+        border-radius: 10%;
+        width: 80%;
+        margin-top: 2.5rem;
+        margin-bottom: 2.5rem;
+        margin-left: 1.5rem;
+        border: 5px double var(--FONTCOLOR);
+        
+    }
+    
+    .hero__h2 {
+        font-family: var(--HF);
+        font-size: var(--HFS);
+        text-align: left;
+        margin-top: 1.5rem;
+    }
+    
+    .hero__p {
+        font-family: var(--TF);
+        font-size:var(--TFS);
+        font-weight: 500;
+        color: var(--FONTCOLOR);
+    }
+
+    @media (max-width:1000px) {
+             .hero__container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+             }
+
+             .hero__p, .hero__h2 {
+                margin-left: 1rem;
+             }
+
+             .hero__h2 {
+                font-size: clamp(40px, calc(1vw + 20px), 80px);
+             }
+    }
+    
+ 
+/*Skills*/ 
+
+.skills {
+    border-top: var(--BORDER-TOP);
+   /*  display: flex;
+    justify-content: center; */   
+}
+
+.skills-container {
+    /* display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3,1fr); */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex: 1;
+    flex-wrap: wrap;
+   
+}
+
+.skills__h2 {
+    text-align: center;
+    margin: 2rem;
+    font-family: var(--HF);
+    font-size: 4rem;
+}
+.web-developement h2, .editing h2, .leadership h2{
+    font-family: var(--TF);
+    font-size: var(--TFS);
+    font-weight: bolder;
+    margin-top: 10px;
+    color: var(--FONTCOLOR);
+}
+.web-developement p, .editing p, .leadership p{
+    font-family: var(--TF);
+    font-size: var(--TFS);
+    font-weight: 500;
+    margin-top: 0.2rem;
+}
+
+.skills-container img {
+    border: 2px solid black;
+    border-radius: 15px;
+}
+
+
+@media (max-width:576px) {
+    .skills-container {
+        gap: 10px;
+    }
+}
+
+/*Contact Me*/
+
+
+.contact-me {
+    border-top: var(--BORDER-TOP);
+    color: var(--FONTCOLOR);
+}
+
+.information-container {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    flex-wrap: nowrap;
+}
+
+.text {
+    text-align: center;
+    margin: 2rem;
+    font-family: var(--HF);
+    font-size: clamp(10px, calc(1vw + 50px), 90px);
+    margin-left: 2rem;
+}
+
+.line-with-text {
+    display: flex;
+    align-items: center;
+  }
+  
+  .line-with-text hr {
+    flex-grow: 1;
+    height: 0.2rem;
+    background: black;
+  }
+ 
+  .name {
+    font-size: var(--TFS);
+    font-weight: bold;
+    margin-top: 0.3rem;
+    color: var(--FONTCOLOR);
+    font-family: var(--TF);
+  }
+
+  .info {
+    font-size: var(--TFS);
+    font-weight: 400;
+    margin-top: 0.3rem;
+    color: var(--FONTCOLOR);
+    font-family: var(--TF);
+  }
+
+  .name, .info {
+    margin-left: 2rem;
+  }
+
+
+  @media (max-width:500px) {
+    hr {
+        display: none;
+    }
+  }
+
+
+ @media (max-width: 321px) {
+   .aboutme, .skills, .contact-me {
+    border-top: 7px double black;
+    width: 110%;
+   }
+
+   .web-developement h2, .editing h2, .leadership h2,
+   .web-developement p, .editing p, .leadership p {
+    margin-left: 8px;
+   }
+
+   .skills-container img {
+    border: 2px solid black;
+    border-radius: 15px;
+    width: 95%;
+    margin-left: 8px;
+}
+ }
+    
